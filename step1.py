@@ -1,5 +1,7 @@
 from dotenv import load_dotenv
+# from langchain_ollama import ChatOllama
 from langchain_google_genai import ChatGoogleGenerativeAI
+
 
 # loading env variables
 load_dotenv()
@@ -38,7 +40,8 @@ def message_to_text(message):
 
 
 # getting the model
-llm = ChatGoogleGenerativeAI(model="gemini-3.8-flash")
+llm = ChatGoogleGenerativeAI(model="gemini-3.5-flash-lite")
+# llm = ChatOllama(model="llama3.2")  # needs Ollama installed and running locally
 
 
 # invoking the model with a query
